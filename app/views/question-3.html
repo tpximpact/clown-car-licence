@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Tell us about your experience – {{ serviceName }}
+  Where have you gained your clowning experience? – {{ serviceName }}
 {% endblock %}
 
 {% block containerStart %}
@@ -17,16 +17,36 @@
 
       <form class="form" action="/check-answers" method="post">
 
-        {{ govukTextarea({
-          name: "experienceDetails",
-          label: {
-            text: "Tell us about your clowning experience",
-            classes: "govuk-label--l",
-            isPageHeading: true
+        {{ govukCheckboxes({
+          name: "experienceLocations",
+          fieldset: {
+            legend: {
+              text: "Where have you gained your clowning experience?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
           hint: {
-            text: "For example, circuses or clown schools."
-          }
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              value: "Circuses",
+              text: "Circuses"
+            },
+            {
+              value: "Clown schools",
+              text: "Clown schools"
+            },
+            {
+              value: "Children's parties",
+              text: "Children's parties"
+            },
+            {
+              value: "Street theatre",
+              text: "Street theatre"
+            }
+          ]
         }) }}
 
         {{ govukButton({

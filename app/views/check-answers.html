@@ -61,19 +61,21 @@
           },
           {
             key: {
-              text: "Experience details"
+              text: "Experience locations"
             },
             value: {
               text: data[
-                'experienceDetails'
-              ]
+                'experienceLocations'
+              ] | join(
+                ", "
+              )
             },
             actions: {
               items: [
                 {
                   href: "/question-3",
                   text: "Change",
-                  visuallyHiddenText: "Experience details"
+                  visuallyHiddenText: "Experience locations"
                 }
               ]
             }
