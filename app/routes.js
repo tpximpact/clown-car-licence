@@ -10,3 +10,13 @@ const router = govukPrototypeKit.requests.setupRouter();
 router.get("/", function (req, res) {
   res.redirect("/start");
 });
+
+router.post("/experience-answer", function (req, res) {
+  const experience = req.session.data["yearsOfExperience"];
+
+  if (experience === "Less than 1 year" || experience === "None") {
+    res.redirect("/ineligible");
+  } else {
+    res.redirect("/question-3");
+  }
+});

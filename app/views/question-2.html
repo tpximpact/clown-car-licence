@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% block pageTitle %}
-  Question page –
+  Clowning experience –
   {{ serviceName }}
   – GOV.UK Prototype Kit
 {% endblock %}
@@ -11,9 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/question-3" method="post">
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      <form class="form" action="/experience-answer" method="post">
 
         {{ govukRadios({
           name: "yearsOfExperience",

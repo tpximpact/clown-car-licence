@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You cannot apply yet – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You cannot apply yet</h1>
+
+      <p>
+        You need at least 1 year of clowning experience to apply for a clown car licence.
+      </p>
+
+      <p>
+        <a class="govuk-link" href="/question-2">
+          Go back and change your answer
+        </a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}
