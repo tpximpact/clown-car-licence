@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block header %}
+  <header>
+    {{ govukHeader() }}
+  </header>
+{% endblock %}
+{% block containerStart %}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply for a licence to drive a clown car</li>
+        <li>say how much clowning experience you have</li>
+      </ul>
+
+      <p>Applying takes around 5 minutes.</p>
+
+      {{ govukButton({ text: "Start now", href: "/question-1", isStartButton: true }) }}
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You will need to tell us about your clowning experience.</p>
+
+      <p>You can only apply for one clown car licence at a time.</p>
+    </div>
+  </div>
+{% endblock %}

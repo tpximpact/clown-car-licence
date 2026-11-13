@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Question page –
+  {{ serviceName }}
+  – GOV.UK Prototype Kit
+{% endblock %}
+{% block containerStart %}
+  {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/question-3" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "yearsOfExperience",
+          fieldset: {
+            legend: {
+              text: "How many years of clowning experience do you have?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "3 years or more",
+              text: "3 years or more"
+            },
+            {
+              value: "1 to 2 years",
+              text: "1 to 2 years"
+            },
+            {
+              value: "Less than 1 year",
+              text: "Less than 1 year"
+            },
+            {
+              value: "None",
+              text: "None"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: "Continue"}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
